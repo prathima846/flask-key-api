@@ -45,6 +45,10 @@ def delete_data(item_id):
     global data_store
     data_store = [item for item in data_store if item["id"] != item_id]
     return jsonify({"message": "Item deleted"}), 200
+@app.route("/")
+def home():
+    return "✅ Flask API is live! Try /get_data"
+
 
 
 if __name__ == '__main__':
